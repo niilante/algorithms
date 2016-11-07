@@ -5,7 +5,7 @@ let List = require('../src/dataStructures/List').List;
 
 // Sorting test
 describe('Sort', () => {
-    let myList = new List(100);
+    let myList = new List(20);
     let arrayCopy = myList.dataStore.slice(0);
     let arrayCopySorted = arrayCopy.slice(0).sort((a, b) => a - b);
             

@@ -45,6 +45,9 @@ var List = (function () {
         });
         return -1;
     };
+    List.prototype.getElement = function (index) {
+        return this.dataStore[index];
+    };
     List.prototype.reset = function () {
         this.pos = 0;
     };
@@ -63,8 +66,13 @@ var List = (function () {
             callback(item);
         }
     };
+    List.prototype.swap = function (index1, index2) {
+        var temp = this.dataStore[index1];
+        this.dataStore[index1] = this.dataStore[index2];
+        this.dataStore[index2] = temp;
+    };
     List.prototype.bubbleSort = function () {
-        this.dataStore = sorting.bubbleSort(this.dataStore);
+        sorting.bubbleSort.call(this, true);
     };
     return List;
 }());

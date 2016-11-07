@@ -60,6 +60,10 @@ export class List implements DataStruct {
         return -1;
     }
 
+    getElement(index: number) {
+        return this.dataStore[index];
+    }
+
     reset() {
         this.pos = 0;
     }
@@ -83,8 +87,14 @@ export class List implements DataStruct {
         }
     }
 
+    swap(index1: number, index2: number) {
+        let temp = this.dataStore[index1];
+        this.dataStore[index1] = this.dataStore[index2];
+        this.dataStore[index2] = temp;
+    }
+
     bubbleSort() {
-        this.dataStore = sorting.bubbleSort(this.dataStore);
+        sorting.bubbleSort.call(this, true);
     }
 
 }
