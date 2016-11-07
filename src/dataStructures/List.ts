@@ -93,8 +93,22 @@ export class List implements DataStruct {
         this.dataStore[index2] = temp;
     }
 
+    setValue(index: number, val: any) {
+        if (index >= 0 && index < this.size()) {
+            this.dataStore[index] = val;
+        }
+    }
+
     bubbleSort() {
-        sorting.bubbleSort.call(this, true);
+        sorting.bubbleSort.call(this);
+    }
+
+    selectionSort() {
+        sorting.selectionSort.call(this)
+    }
+
+    insertionSort() {
+        sorting.insertionSort.call(this);
     }
 
 }

@@ -71,8 +71,19 @@ var List = (function () {
         this.dataStore[index1] = this.dataStore[index2];
         this.dataStore[index2] = temp;
     };
+    List.prototype.setValue = function (index, val) {
+        if (index >= 0 && index < this.size()) {
+            this.dataStore[index] = val;
+        }
+    };
     List.prototype.bubbleSort = function () {
-        sorting.bubbleSort.call(this, true);
+        sorting.bubbleSort.call(this);
+    };
+    List.prototype.selectionSort = function () {
+        sorting.selectionSort.call(this);
+    };
+    List.prototype.insertionSort = function () {
+        sorting.insertionSort.call(this);
     };
     return List;
 }());
