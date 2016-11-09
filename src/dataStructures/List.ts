@@ -1,6 +1,7 @@
 import {DataStruct} from "./DataStruct";
 
-import * as sorting from "../algorithms/sorting";
+import * as sort from "../algorithms/sort";
+import * as search from "../algorithms/search";
 
 export class List implements DataStruct {
     dataStore: any[];
@@ -100,23 +101,27 @@ export class List implements DataStruct {
     }
 
     bubbleSort() {
-        sorting.bubbleSort.call(this);
+        sort.bubbleSort.call(this);
     }
 
     selectionSort() {
-        sorting.selectionSort.call(this)
+        sort.selectionSort.call(this)
     }
 
     insertionSort() {
-        sorting.insertionSort.call(this);
+        sort.insertionSort.call(this);
     }
 
     quickSort() {
-        this.dataStore = sorting.quickSort(this.dataStore);
+        this.dataStore = sort.quickSort(this.dataStore);
     }
 
     shellSort() {
-        sorting.shellSort.call(this);
+        sort.shellSort.call(this);
+    }
+
+    binarySearch(data: any) {
+        return search.binarySearch.call(this, data);
     }
 
 }

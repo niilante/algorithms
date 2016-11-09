@@ -67,11 +67,11 @@ export function quickSort(list: any[]): any[] {
 }
 
 export function shellSort() {
-    let N: number = this.dataStore.length;
+    let N: number = this.size();
 
     for (let gap = Math.floor(N / 2); gap > 0; gap = Math.floor(gap / 2)) {
         for (let i = gap; i < N; i++) {
-            for (let j = i - gap; j >= 0 && this.dataStore[j] > this.dataStore[j + gap]; j -= gap) {
+            for (let j = i - gap; j >= 0 && this.getElement(j) > this.getElement(j + gap); j -= gap) {
                 this.swap(j, j + gap);
             }
         }

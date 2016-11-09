@@ -1,5 +1,6 @@
 "use strict";
-var sorting = require("../algorithms/sorting");
+var sort = require("../algorithms/sort");
+var search = require("../algorithms/search");
 var List = (function () {
     function List(num) {
         this.dataStore = [];
@@ -77,19 +78,22 @@ var List = (function () {
         }
     };
     List.prototype.bubbleSort = function () {
-        sorting.bubbleSort.call(this);
+        sort.bubbleSort.call(this);
     };
     List.prototype.selectionSort = function () {
-        sorting.selectionSort.call(this);
+        sort.selectionSort.call(this);
     };
     List.prototype.insertionSort = function () {
-        sorting.insertionSort.call(this);
+        sort.insertionSort.call(this);
     };
     List.prototype.quickSort = function () {
-        this.dataStore = sorting.quickSort(this.dataStore);
+        this.dataStore = sort.quickSort(this.dataStore);
     };
     List.prototype.shellSort = function () {
-        sorting.shellSort.call(this);
+        sort.shellSort.call(this);
+    };
+    List.prototype.binarySearch = function (data) {
+        return search.binarySearch.call(this, data);
     };
     return List;
 }());
