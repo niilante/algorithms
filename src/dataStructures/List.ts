@@ -111,4 +111,12 @@ export class List implements DataStruct {
         sorting.insertionSort.call(this);
     }
 
+    quickSort() {
+        this.dataStore = sorting.quickSort(this.dataStore);
+    }
+
+    shellSort() {
+        sorting.shellSort.call(this);
+    }
+
 }

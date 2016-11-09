@@ -20,5 +20,5 @@ export interface DataStruct {
     each(el: (item: any) => void): void,
 
     swap(index1: number, index2: number): void,
-    setValue(index: number, val: any)
+    setValue(index: number, val: any): void
 }

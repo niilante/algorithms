@@ -56,3 +56,25 @@ function insertionSort(debugMode) {
         console.log("--------------");
 }
 exports.insertionSort = insertionSort;
+function quickSort(list) {
+    if (list.length == 0) {
+        return [];
+    }
+    var lesser = [], greater = [], pivot = list[0];
+    for (var i = 1; i < list.length; i++) {
+        list[i] < pivot ? lesser.push(list[i]) : greater.push(list[i]);
+    }
+    return quickSort(lesser).concat(pivot, quickSort(greater));
+}
+exports.quickSort = quickSort;
+function shellSort() {
+    var N = this.dataStore.length;
+    for (var gap = Math.floor(N / 2); gap > 0; gap = Math.floor(gap / 2)) {
+        for (var i = gap; i < N; i++) {
+            for (var j = i - gap; j >= 0 && this.dataStore[j] > this.dataStore[j + gap]; j -= gap) {
+                this.swap(j, j + gap);
+            }
+        }
+    }
+}
+exports.shellSort = shellSort;

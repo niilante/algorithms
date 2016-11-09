@@ -17,7 +17,7 @@ export function bubbleSort(debugMode = false) {
 export function selectionSort(debugMode = false) {
     if (debugMode) console.log("--------------");
 
-    let min, temp;
+    let min: any, temp: any;
     for (let outer = 0; outer <= this.size() - 2; ++outer) {
         min = outer;
         for (let inner = outer + 1; inner <= this.size() - 1; ++inner) {
@@ -36,7 +36,7 @@ export function selectionSort(debugMode = false) {
 export function insertionSort(debugMode = false) {
     if (debugMode) console.log("--------------");
 
-    let temp, inner;
+    let temp: any, inner: any;
     for (let outer = 1; outer <= this.size() - 1; ++outer) {
         temp = this.getElement(outer);
         inner = outer;
@@ -50,4 +50,30 @@ export function insertionSort(debugMode = false) {
     }
 
     if (debugMode) console.log("--------------");
+}
+
+export function quickSort(list: any[]): any[] {
+    if (list.length == 0) {
+        return [];
+    }
+
+    let lesser: any[] = [], greater: any[] = [], pivot: any[] = list[0];
+
+    for (let i = 1; i < list.length; i++) {
+        list[i] < pivot ? lesser.push(list[i]) : greater.push(list[i]);
+    }
+
+    return quickSort(lesser).concat(pivot, quickSort(greater));
+}
+
+export function shellSort() {
+    let N: number = this.dataStore.length;
+
+    for (let gap = Math.floor(N / 2); gap > 0; gap = Math.floor(gap / 2)) {
+        for (let i = gap; i < N; i++) {
+            for (let j = i - gap; j >= 0 && this.dataStore[j] > this.dataStore[j + gap]; j -= gap) {
+                this.swap(j, j + gap);
+            }
+        }
+    }
 }

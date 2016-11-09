@@ -41,6 +41,28 @@ describe('Sort', () => {
                 arrayCopySorted.toString()
             );
         });
+
+        it('Quick Sort', () => {
+            let myList = new List(100);
+            let arrayCopySorted = myList.dataStore.slice(0).sort((a, b) => a - b);
+            myList.quickSort();
+
+            assert.equal(
+                myList.toString(), 
+                arrayCopySorted.toString()
+            );
+        });
+
+        it('Shell Sort', () => {
+            let myList = new List(100);
+            let arrayCopySorted = myList.dataStore.slice(0).sort((a, b) => a - b);
+            myList.shellSort();
+
+            assert.equal(
+                myList.toString(), 
+                arrayCopySorted.toString()
+            );
+        });
         
     });
 

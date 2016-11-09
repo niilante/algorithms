@@ -85,6 +85,12 @@ var List = (function () {
     List.prototype.insertionSort = function () {
         sorting.insertionSort.call(this);
     };
+    List.prototype.quickSort = function () {
+        this.dataStore = sorting.quickSort(this.dataStore);
+    };
+    List.prototype.shellSort = function () {
+        sorting.shellSort.call(this);
+    };
     return List;
 }());
 exports.List = List;

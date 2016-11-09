@@ -12,3 +12,5 @@ gulp.task('ts', () => {
 gulp.task('watch', ['ts'], () => {
     gulp.watch('./src/**/*.ts', ['ts']);
 });
+
+gulp.task('default', ['watch']);
